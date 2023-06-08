@@ -6,7 +6,7 @@ import G703 from "../../assets/mouses/up-G703.png";
 
 export const Description = () => {
   return (
-    <main className="flex items-center justify-center mx-[5rem] my-[10rem] relative ">
+    <main className="flex items-center justify-center mx-[5rem] my-[2rem] relative ">
       <div>
         <div>
           <h1>G703 LIGHTSPEED</h1>

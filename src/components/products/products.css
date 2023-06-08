@@ -1,0 +1,36 @@
+.producst {
+  margin-bottom: 100px;
+}
+.producst h2 {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--white);
+}
+.producst span {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 14px;
+  color: var(--letter-blue);
+}
+
+@media (max-width: 750px) {
+  .producst {
+    gap: 10px;
+  }
+  .producst h2 {
+    font-size: 12px;
+    text-align: center;
+    margin: 20px;
+  }
+  .producst li {
+    width: 200px;
+    height: 100px;
+  }
+  .producst li img {
+    width: 100px;
+    margin-top: -50px;
+  }
+  .producst li div span {
+    font-size: 12px;
+  }
+}

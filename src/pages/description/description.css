@@ -14,7 +14,6 @@ main div h4 {
 }
 
 main div p {
-  font-family: "Poppins";
   font-size: 20px;
   font-weight: 300;
   color: var(--white);
