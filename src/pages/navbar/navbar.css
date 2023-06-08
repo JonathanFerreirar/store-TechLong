@@ -14,15 +14,18 @@ nav ul li {
 
 @media (max-width: 750px) {
   nav {
+    display: none !important;
+  }
+  nav {
     justify-content: space-between;
     width: 90vw !important;
     margin: 10px auto !important;
   }
   nav div {
-    font-size: 12px;
+    font-size: 10px !important;
   }
   nav div img {
-    width: 15px;
+    width: 9px !important;
   }
 
   nav ul {
@@ -35,5 +38,6 @@ nav ul li {
   }
   nav ul li {
     margin-left: 0 !important;
+    font-size: 12px !important;
   }
 }

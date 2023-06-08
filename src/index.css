@@ -9,10 +9,12 @@
   --shadow: #383a3b;
   --letter-gray: #b4b9ba;
   --letter-blue: #3a8bb1;
+  --white: #ffff;
 }
 
 * {
   font-family: "Poppins", sans-serif;
+  font-style: normal;
 }
 
 body {

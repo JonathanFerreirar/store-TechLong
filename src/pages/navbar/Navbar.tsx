@@ -4,7 +4,7 @@ import { BsCartFill } from "react-icons/bs";
 
 import "./navbar.css";
 
-import Logo from "../assets/Logo.svg";
+import Logo from "../../assets/Logo.svg";
 
 export const Navbar: React.FC = () => {
   return (
