@@ -6,7 +6,8 @@ import { Input } from "../../components/input/Input";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[80vh]">
+    <div className="flex flex-col items-center justify-center h-[90vh] contact">
+      <h2 className="mb-[80px]">Contact us</h2>
       <div className="flex lg:gap-[100px] gap-[10px]">
         <Input
           placeholder="Name"

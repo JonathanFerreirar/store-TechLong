@@ -10,9 +10,11 @@ import Logo from "../../assets/Logo.svg";
 export const Navbar: React.FC = () => {
   return (
     <nav className="flex relative justify-between items-center mx-[5rem] my-5">
-      <div className="flex gap-2 items-center">
-        <img className="w-10" src={Logo} alt="Logo TechLong" />
-        <h3>TechLong</h3>
+      <div>
+        <Link to={"/"} className="flex gap-2 items-center">
+          <img className="w-10" src={Logo} alt="Logo TechLong" />
+          <h3>TechLong</h3>
+        </Link>
       </div>
       <ul className="flex gap-9 items-center  ">
         <Link to={"/"} className="text-white hover:text-[#3a8bb1]">
