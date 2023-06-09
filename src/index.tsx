@@ -5,9 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Server } from "miragejs";
 
-import G502 from "./assets/mouses/G502.png";
-import G703 from "./assets/mouses/G703.png";
-import G203 from "./assets/mouses/G203.png";
+import { router } from "./Router";
+import { RouterProvider } from "react-router-dom";
+
+import G502 from "./assets/mouses/G502.svg";
+import G703 from "./assets/mouses/G703.svg";
+import G203 from "./assets/mouses/G203.svg";
 
 new Server({
   routes() {
@@ -36,6 +39,6 @@ new Server({
 });
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
-root.render(<App />);
+root.render(<RouterProvider router={router} />);
 
 reportWebVitals();

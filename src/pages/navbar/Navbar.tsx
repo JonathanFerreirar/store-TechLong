@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BsCartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
@@ -14,9 +15,13 @@ export const Navbar: React.FC = () => {
         <h3>TechLong</h3>
       </div>
       <ul className="flex gap-9 items-center  ">
-        <li className="text-white ">Products</li>
-        <li className="text-white ">Contact</li>
-        <li className="text-white text-[20px] ml-[100px] ">
+        <Link to={"/"} className="text-white hover:text-[#3a8bb1]">
+          Home
+        </Link>
+        <Link to={"/contact"} className="text-white hover:text-[#3a8bb1]">
+          Contact
+        </Link>
+        <li className="text-white text-[20px] ml-[100px] hover:text-[#3a8bb1]">
           <BsCartFill />
         </li>
       </ul>
