@@ -6,6 +6,7 @@ import { Model, Server } from "miragejs";
 
 import { router } from "./Router";
 import { RouterProvider } from "react-router-dom";
+import { Provider } from "./context/mousse-context";
 
 import G502 from "./assets/mouses/G502.svg";
 import G703 from "./assets/mouses/G703.svg";
@@ -66,6 +67,10 @@ new Server({
 });
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
-root.render(<RouterProvider router={router} />);
+root.render(
+  <Provider>
+    <RouterProvider router={router} />
+  </Provider>
+);
 
 reportWebVitals();

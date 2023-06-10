@@ -31,6 +31,7 @@ export const Products = ({ product, cartProduct }: IProducts) => {
       price: mouse.price,
     };
     cartProduct(cartMouse);
+    console.clear();
   };
 
   const rendereredProduct = product.map((mouse) => {

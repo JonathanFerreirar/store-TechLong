@@ -1,51 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 
-import { Http } from "../../api";
+import MouseContext from "../../context/mousse-context";
 
 import "./products-page.css";
 
 import { Products } from "../../components/products/Products";
 
-interface IMouseObj {
-  model: string;
-  img: any;
-  price: number;
-}
-
 export const ProductsPage = () => {
-  const [productsObj, setProductsObd] = useState([]);
-  const [productsCart, setproductsCart] = useState<IMouseObj>();
-
-  const getValueToCart = (item: IMouseObj) => {
-    setproductsCart(item);
-  };
-  //console.log("Iem chegou com sucesso aqui", productsCart);
+  const {
+    getProdctsContext,
+    productsObj,
+    productsCart,
+    getValueToCartContext,
+    postProdctsContext,
+    getProdctsCartContext,
+  } = useContext(MouseContext);
 
   useEffect(() => {
-    const getProdcts = async () => {
-      const response = await Http.get("/api/mouse");
+    getProdctsContext();
 
-      setProductsObd(response.data.mouses);
-      console.log("Itens on the cart", response.data.cart[0].models);
-    };
+    postProdctsContext();
 
-    getProdcts();
-
-    const postProdcts = async () => {
-      const response = await Http.post("/api/mouse", {
-        model: productsCart?.model,
-        img: productsCart?.img,
-        price: productsCart?.price,
-      });
-    };
-    postProdcts();
-
-    // const getMous = async () => {
-    //   const response = await Http.get("/api/cart");
-    //   console.log("Aqui está", response);
-    // };
-    // getMous();
+    getProdctsCartContext();
   }, [productsCart]);
 
-  return <Products cartProduct={getValueToCart} product={productsObj} />;
+  return <Products cartProduct={getValueToCartContext} product={productsObj} />;
 };

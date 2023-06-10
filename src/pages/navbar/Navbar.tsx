@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import MouseContext from "../../context/mousse-context";
 
 import { BsCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -8,6 +10,8 @@ import "./navbar.css";
 import Logo from "../../assets/Logo.svg";
 
 export const Navbar: React.FC = () => {
+  const { productsInCart } = useContext(MouseContext);
+
   return (
     <nav className="navbar flex relative justify-between items-center mx-[5rem] my-5">
       <div>
@@ -23,8 +27,11 @@ export const Navbar: React.FC = () => {
         <Link to={"/contact"} className="text-white hover:text-[#3a8bb1]">
           Contact
         </Link>
-        <li className="text-white text-[20px] ml-[100px] hover:text-[#3a8bb1]">
+        <li className="flex gap-2 items-center justify-center text-white text-[20px] ml-[100px] hover:text-[#3a8bb1]">
           <BsCartFill />
+          <p className="text-[15px] text-[#3a8bb1]">
+            {productsInCart.length - 1 !== 0 ? productsInCart.length - 1 : ""}
+          </p>
         </li>
       </ul>
     </nav>
