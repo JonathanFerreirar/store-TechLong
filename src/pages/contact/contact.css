@@ -10,3 +10,15 @@
   font-weight: 300;
   color: var(--white);
 }
+
+@media (max-width: 700px) {
+  .contact {
+    margin-top: 100px;
+  }
+  .contact-text {
+    margin-bottom: 30px;
+  }
+  .inputs {
+    font-size: 11px !important;
+  }
+}
