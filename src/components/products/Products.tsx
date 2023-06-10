@@ -12,9 +12,10 @@ interface IMouseObj {
 
 interface IProducts {
   product: IMouseObj[];
+  cartProduct: (cartMouse: IMouseObj) => void;
 }
 
-export const Products = ({ product }: IProducts) => {
+export const Products = ({ product, cartProduct }: IProducts) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleMouseEnter = (model: string) => {
@@ -22,6 +23,14 @@ export const Products = ({ product }: IProducts) => {
   };
   const handleMouseLeave = () => {
     setHoveredItem(null);
+  };
+  const addToCart = (mouse: any) => {
+    const cartMouse = {
+      model: mouse.model,
+      img: mouse.img,
+      price: mouse.price,
+    };
+    cartProduct(cartMouse);
   };
 
   const rendereredProduct = product.map((mouse) => {
@@ -43,7 +52,12 @@ export const Products = ({ product }: IProducts) => {
           <span className="mx-5">{mouse.model}</span>
           <span className="mx-5">R$ {mouse.price}</span>
           {isHovered && (
-            <span className="absolute card-product rounded-[15px]">
+            <span
+              onClick={() => {
+                addToCart(mouse);
+              }}
+              className="absolute card-product rounded-[15px]"
+            >
               <BsCartFill className="card absolute" />
             </span>
           )}
