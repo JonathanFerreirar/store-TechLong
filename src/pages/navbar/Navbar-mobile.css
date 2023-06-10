@@ -1,0 +1,39 @@
+.navbar-mobile {
+  display: none;
+}
+
+.mobile {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 18px;
+  color: var(--letter-blue);
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .navbar-mobile {
+    display: flex;
+  }
+  .navbar {
+    justify-content: space-between;
+    width: 90vw !important;
+    margin: 10px auto !important;
+  }
+  .navbar div {
+    font-size: 10px !important;
+  }
+  .navbar div img {
+    width: 9px !important;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
