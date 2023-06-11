@@ -11,16 +11,19 @@ const MouseContext = createContext({
   productsObj: [],
   productsInCart: [{}],
   productsCart: {},
+  mouseOnDescription: {},
   getProdctsContext: () => {},
   postProdctsContext: () => {},
   getValueToCartContext: (item: IMouseObj) => {},
   getProdctsCartContext: () => {},
+  handleDescription: (item: any) => {},
 });
 
 function Provider({ children }: any) {
   const [productsObj, setProductsObj] = useState([]);
   const [productsCart, setproductsCart] = useState<any>();
   const [productsInCart, setproductsInCart] = useState<any>([{}]);
+  const [mouseOnDescription, setmouseOnDescription] = useState<any>([{}]);
 
   const getProdctsContext = useCallback(async () => {
     try {
@@ -46,9 +49,6 @@ function Provider({ children }: any) {
     }
   }, [productsInCart]);
 
-  const getValueToCartContext = (item: IMouseObj) => {
-    setproductsCart(item);
-  };
   const postProdctsContext = useCallback(async () => {
     try {
       const response = await Http.post("/api/mouse", {
@@ -61,14 +61,23 @@ function Provider({ children }: any) {
     }
   }, [productsCart]);
 
+  const getValueToCartContext = (item: IMouseObj) => {
+    setproductsCart(item);
+  };
+  const handleDescription = (item: IMouseObj) => {
+    setmouseOnDescription(item);
+  };
+
   const mouseShare = {
     productsObj,
     productsCart,
     productsInCart,
+    mouseOnDescription,
     getProdctsContext,
     postProdctsContext,
     getValueToCartContext,
     getProdctsCartContext,
+    handleDescription,
   };
 
   return (

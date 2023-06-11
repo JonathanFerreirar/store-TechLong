@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import MouseContext from "../../context/mousse-context";
 
 import { ProductsPage } from "../products/Products-page";
 
@@ -7,12 +9,21 @@ import "./description.css";
 import G703 from "../../assets/mouses/up-G703.png";
 
 const Description = () => {
+  const [handleDescrition, setHandleDescrition] = useState<any>([]);
+
+  const { mouseOnDescription } = useContext(MouseContext);
+
+  useEffect(() => {
+    setHandleDescrition(mouseOnDescription);
+    console.log(handleDescrition[0]?.modelFull);
+  }, [mouseOnDescription]);
+
   return (
     <>
       <main className="flex items-center justify-center mx-[5rem] mt-[5rem] relative ">
         <div>
           <div>
-            <h1>G703 LIGHTSPEED</h1>
+            <h1>TECHLONG SOTRE</h1>
           </div>
 
           <div className="py-7 max-w-[60%] z-1">
@@ -21,7 +32,7 @@ const Description = () => {
           </div>
           <div className="max-h-[400px] max-w-[90%] text-justify">
             <p>
-              The TechLong G502 is an exceptional gaming peripheral with an
+              The TechLong is an exceptional gaming store peripheral with an
               ergonomic design that ensures comfort during long gaming sessions.
               Its high-resolution sensor enables precise and fluid movements on
               any surface, while the programmable buttons offer customization
@@ -36,6 +47,7 @@ const Description = () => {
         </div>
       </main>
       <ProductsPage />
+      {/* //G703 */}
     </>
   );
 };

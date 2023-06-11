@@ -12,6 +12,10 @@ import G502 from "./assets/mouses/G502.svg";
 import G703 from "./assets/mouses/G703.svg";
 import G203 from "./assets/mouses/G203.svg";
 
+import UPG502 from "./assets/mouses/up-G502.png";
+import UPG703 from "./assets/mouses/up-G703.png";
+import UPG203 from "./assets/mouses/up-G203.png";
+
 new Server({
   models: {
     mouse: Model,
@@ -25,17 +29,23 @@ new Server({
         mouses: [
           {
             model: "G502",
+            modelFull: "G502 HERO ",
             img: G502,
+            imgUp: UPG502,
             price: 399.99,
           },
           {
             model: "G703",
+            modelFull: "G703 LIGHTSPEED",
             img: G703,
+            imgUp: UPG703,
             price: 299.99,
           },
           {
             model: "G203",
+            modelFull: "G203 LIGHTSYNC",
             img: G203,
+            imgUp: UPG203,
             price: 129.99,
           },
         ],

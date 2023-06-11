@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { BsCartFill } from "react-icons/bs";
+
+import MouseContext from "../../context/mousse-context";
 
 import "./products.css";
 
@@ -17,12 +19,16 @@ interface IProducts {
 
 export const Products = ({ product, cartProduct }: IProducts) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const { handleDescription } = useContext(MouseContext);
 
-  const handleMouseEnter = (model: string) => {
-    setHoveredItem(model);
+  const handleMouseEnter = (model: IMouseObj) => {
+    setHoveredItem(model?.model);
+
+    handleDescription([model]);
   };
   const handleMouseLeave = () => {
     setHoveredItem(null);
+    handleDescription([]);
   };
   const addToCart = (mouse: any) => {
     const cartMouse = {
@@ -30,7 +36,9 @@ export const Products = ({ product, cartProduct }: IProducts) => {
       img: mouse.img,
       price: mouse.price,
     };
+
     cartProduct(cartMouse);
+
     console.clear();
   };
 
@@ -41,8 +49,8 @@ export const Products = ({ product, cartProduct }: IProducts) => {
       <li
         key={mouse.model}
         className="w-[300px] h-[140px] bg-[#424242] rounded-[15px] flex flex-col items-center justify-center mt-[100px] cursor-pointer relative"
-        onMouseOver={() => handleMouseEnter(mouse.model)}
-        onMouseOut={handleMouseLeave}
+        onMouseEnter={() => handleMouseEnter(mouse)}
+        onMouseLeave={handleMouseLeave}
       >
         <img
           className="G502  w-[220px] mt-[-105px] "
