@@ -29,7 +29,7 @@ function ConfirmCustom({
   return (
     <div className="confirm">
       <div className="flex justify-center items-center py-4 p-1 text-center">
-        <h1>Would you like to add it to your affection?</h1>
+        <h1>Would you like to add it to your cart ?</h1>
       </div>
 
       <p className="text-center py-5 p-5 text-justify ">{contentAlert}</p>

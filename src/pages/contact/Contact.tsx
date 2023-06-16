@@ -9,6 +9,7 @@ const Contact = () => {
     <form
       action="https://formsubmit.co/jonathanferreirar@gmail.com"
       method="POST"
+      autoComplete="off"
     >
       <input
         type="hidden"
