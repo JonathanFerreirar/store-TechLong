@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar } from "./pages/navbar/Navbar";
 import { NavbarMobile } from "./pages/navbar/Navbar-mobile";
 import { Outlet } from "react-router-dom";
-import { Provider } from "./context/mouse-context";
+
+import { Toast } from "./components/confirm-custom/Toast";
+import confirmAlertContext from "./context/confirm-alert-context";
 
 function App() {
+  const { toastState } = useContext(confirmAlertContext);
   return (
     <div className="App">
-      <Provider>
-        <Navbar />
-        <NavbarMobile />
-        <Outlet />
-      </Provider>
+      <Navbar />
+      <NavbarMobile />
+      <Outlet />
+      {toastState && <Toast />}
     </div>
   );
 }

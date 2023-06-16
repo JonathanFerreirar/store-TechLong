@@ -5,8 +5,10 @@ type ModalState = {
 };
 
 const confirmAlertContext = createContext({
-  handleAlertModal: (model: string) => {},
   modalState: {} as ModalState,
+  toastState: false,
+  handleAlertModal: (model: string) => {},
+  handleToastState: () => {},
 });
 
 const ProviderAlert = ({ children }: any) => {
@@ -15,6 +17,7 @@ const ProviderAlert = ({ children }: any) => {
   const [modalState, setModalState] = useState<ModalState>({
     [model]: false,
   });
+  const [toastState, setToastState] = useState(false);
 
   const handleAlertModal = (model: string) => {
     setModalState({
@@ -22,9 +25,18 @@ const ProviderAlert = ({ children }: any) => {
     });
   };
 
+  const handleToastState = () => {
+    setToastState((prevSatet) => !prevSatet);
+    setTimeout(() => {
+      if (!toastState) setToastState((prevSatet) => !prevSatet);
+    }, 1300);
+  };
+
   const AlertFunction = {
-    handleAlertModal,
     modalState,
+    toastState,
+    handleAlertModal,
+    handleToastState,
   };
 
   return (

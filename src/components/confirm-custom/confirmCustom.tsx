@@ -1,6 +1,7 @@
 import "./confirmCustom.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 
+import confirmAlertContext from "../../context/confirm-alert-context";
 interface IconfirmAlert {
   onClose: () => void;
 
@@ -15,6 +16,8 @@ function ConfirmCustom({
   imgAlert,
   buyConfirm,
 }: IconfirmAlert) {
+  const { handleToastState } = useContext(confirmAlertContext);
+
   useEffect(() => {
     document.body.classList.add("overflow-hidden");
 
@@ -40,7 +43,14 @@ function ConfirmCustom({
 
       <div className="flex justify-center gap-10 py-10">
         <button onClick={onClose}>No</button>
-        <button onClick={buyConfirm}>Yes</button>
+        <button
+          onClick={() => {
+            buyConfirm();
+            handleToastState();
+          }}
+        >
+          Yes
+        </button>
       </div>
     </div>
   );
