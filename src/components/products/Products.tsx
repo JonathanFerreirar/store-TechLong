@@ -1,49 +1,52 @@
 import React, { useState, useContext } from "react";
 
+import confirmAlertContext from "../../context/confirm-alert-context";
+
+import ConfirmCustom from "../confirm-custom/confirmCustom";
+
 import { BsCartFill } from "react-icons/bs";
 
-import MouseContext from "../../context/mousse-context";
-
 import "./products.css";
+import MouseContext from "../../context/mouse-context";
 
 interface IMouseObj {
   model: string;
   img: any;
   price: number;
+  imgUp: any;
+  description: string;
 }
 
 interface IProducts {
   product: IMouseObj[];
-  cartProduct: (cartMouse: IMouseObj) => void;
 }
 
-export const Products = ({ product, cartProduct }: IProducts) => {
+export const Products = ({ product }: IProducts) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const { handleDescription } = useContext(MouseContext);
 
+  const { handleAlertModal, modalState } = useContext(confirmAlertContext);
+  const { getValueToCartContext } = useContext(MouseContext);
   const handleMouseEnter = (model: IMouseObj) => {
     setHoveredItem(model?.model);
-
-    handleDescription([model]);
   };
   const handleMouseLeave = () => {
     setHoveredItem(null);
-    handleDescription([]);
-  };
-  const addToCart = (mouse: any) => {
-    const cartMouse = {
-      model: mouse.model,
-      img: mouse.img,
-      price: mouse.price,
-    };
-
-    cartProduct(cartMouse);
-
-    console.clear();
   };
 
   const rendereredProduct = product.map((mouse) => {
     const isHovered = hoveredItem === mouse.model;
+    const renderedModal = (
+      <ConfirmCustom
+        key={mouse.model}
+        onClose={() => handleAlertModal(mouse.model)}
+        buyConfirm={() => {
+          getValueToCartContext(mouse);
+          handleAlertModal(mouse.model);
+        }}
+        contentAlert={mouse.description}
+        imgAlert={mouse.imgUp}
+      />
+    );
 
     return (
       <li
@@ -57,16 +60,15 @@ export const Products = ({ product, cartProduct }: IProducts) => {
           src={mouse.img}
           alt={mouse.model}
         />
-        <div className="flex justify-between w-full ">
+        <div
+          className="flex justify-between w-full "
+          onClick={() => handleAlertModal(mouse.model)}
+        >
           <span className="mx-5">{mouse.model}</span>
           <span className="mx-5">R$ {mouse.price}</span>
+          {modalState[mouse.model] && renderedModal}
           {isHovered && (
-            <span
-              onClick={() => {
-                addToCart(mouse);
-              }}
-              className="absolute card-product rounded-[15px]"
-            >
+            <span className="absolute card-product rounded-[15px]">
               <BsCartFill className="card absolute" />
             </span>
           )}
@@ -74,6 +76,7 @@ export const Products = ({ product, cartProduct }: IProducts) => {
       </li>
     );
   });
+
   return (
     <div className="flex gap-[100px] flex-col items-center justify-center producst mt-[100px]">
       <h2>which type of mouse are you looking for ?</h2>

@@ -1,28 +1,17 @@
 import React, { useEffect, useContext } from "react";
 
-import MouseContext from "../../context/mousse-context";
+import MouseContext from "../../context/mouse-context";
 
 import "./products-page.css";
 
 import { Products } from "../../components/products/Products";
 
 export const ProductsPage = () => {
-  const {
-    getProdctsContext,
-    productsObj,
-    productsCart,
-    getValueToCartContext,
-    postProdctsContext,
-    getProdctsCartContext,
-  } = useContext(MouseContext);
+  const { getProdctsContext, productsObj } = useContext(MouseContext);
 
   useEffect(() => {
     getProdctsContext();
+  }, [getProdctsContext]);
 
-    postProdctsContext();
-
-    getProdctsCartContext();
-  }, [productsCart]);
-
-  return <Products cartProduct={getValueToCartContext} product={productsObj} />;
+  return <Products product={productsObj} />;
 };

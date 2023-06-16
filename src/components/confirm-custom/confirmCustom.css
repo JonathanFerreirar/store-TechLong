@@ -1,0 +1,81 @@
+.confirm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  min-height: 30%;
+  border-radius: 15px;
+
+  z-index: 99;
+  background-color: var(--shadow);
+}
+.confirm h1 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 36px;
+  color: var(--letter-blue);
+}
+
+.confirm p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--white);
+}
+.confirm button {
+  background-color: var(--background);
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+
+  color: var(--letter-blue);
+
+  font-weight: 600;
+  font-size: 15px;
+
+  box-shadow: rgba(10, 100, 111, 0.2) 0px 7px 2px 0px;
+}
+
+.confirm button:hover {
+  box-shadow: none;
+  color: #fff;
+}
+
+@media (max-width: 750px) {
+  .confirm {
+    width: 85%;
+  }
+  .confirm h1 {
+    font-size: 20px;
+  }
+  .confirm p {
+    font-size: 0.9rem;
+    padding: 10 0 !important;
+  }
+
+  .confirm button {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+.img-content {
+  width: 300px;
+}
+
+@media (max-width: 480px) {
+  .confirm {
+    width: 85%;
+  }
+  .confirm h1 {
+    font-size: 18px;
+  }
+  .confirm p {
+    font-size: 0.8rem;
+  }
+
+  .confirm button {
+    width: 90px;
+    height: 40px;
+  }
+}

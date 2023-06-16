@@ -1,4 +1,5 @@
 import React from "react";
+
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -6,15 +7,16 @@ import { Model, Server } from "miragejs";
 
 import { router } from "./Router";
 import { RouterProvider } from "react-router-dom";
-import { Provider } from "./context/mousse-context";
+import { Provider } from "./context/mouse-context";
+import { ProviderAlert } from "./context/confirm-alert-context";
 
-import G502 from "./assets/mouses/G502.svg";
-import G703 from "./assets/mouses/G703.svg";
-import G203 from "./assets/mouses/G203.svg";
+import G502 from "./assets/mouses/G502.webp";
+import G703 from "./assets/mouses/G703.webp";
+import G203 from "./assets/mouses/G203.webp";
 
-import UPG502 from "./assets/mouses/up-G502.png";
-import UPG703 from "./assets/mouses/up-G703.png";
-import UPG203 from "./assets/mouses/up-G203.png";
+import UPG502 from "./assets/mouses/UPG502.webp";
+import UPG703 from "./assets/mouses/UPG703.webp";
+import UPG203 from "./assets/mouses/UPG203.webp";
 
 new Server({
   models: {
@@ -29,21 +31,24 @@ new Server({
         mouses: [
           {
             model: "G502",
-            modelFull: "G502 HERO ",
+            description:
+              "G502 HERO! Built for advanced gaming performance. G502 HERO features a HERO 25K gaming sensor with sub-micrometer precision tracking, customizable LIGHTSYNC RGB, built-in profiles, repositionable weights and more.",
             img: G502,
             imgUp: UPG502,
             price: 399.99,
           },
           {
             model: "G703",
-            modelFull: "G703 LIGHTSPEED",
+            description:
+              "G703 LIGHTSPEED! Introducing the advanced HERO 25K gaming sensor with sub-micrometer tracking and 10x more power efficiency than previous generations. Professional-grade wireless LIGHTSPEED delivers ultra-low latency for peak performance.",
             img: G703,
             imgUp: UPG703,
             price: 299.99,
           },
           {
             model: "G203",
-            modelFull: "G203 LIGHTSYNC",
+            description:
+              "G203 LIGHTSYNC! Make the most of your gaming time with the G203 — a gaming mouse available in a variety of vibrant colors. With LIGHTSYNC technology, a gaming-grade sensor, and a classic 6-button design, you'll light up your game and your desk.",
             img: G203,
             imgUp: UPG203,
             price: 129.99,
@@ -56,10 +61,6 @@ new Server({
     this.post("/mouse", (schema, request): any => {
       const data = JSON.parse(request.requestBody);
 
-      // const newItem: any = {
-      //  data
-      // };
-
       const cartItem = schema.create("mouse", data);
 
       return {
@@ -68,18 +69,15 @@ new Server({
         cartItem,
       };
     });
-    // this.get("/cart", async (schema) => {
-    //   return {
-    //     cart: (await schema.cart.all()).models,
-    //   };
-    // });
   },
 });
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <Provider>
-    <RouterProvider router={router} />
+    <ProviderAlert>
+      <RouterProvider router={router} />
+    </ProviderAlert>
   </Provider>
 );
 

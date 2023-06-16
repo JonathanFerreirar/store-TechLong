@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import MouseContext from "../../context/mousse-context";
+import MouseContext from "../../context/mouse-context";
 
 import { ProductsPage } from "../products/Products-page";
 
@@ -9,21 +9,19 @@ import "./description.css";
 import G703 from "../../assets/mouses/up-G703.png";
 
 const Description = () => {
-  const [handleDescrition, setHandleDescrition] = useState<any>([]);
+  const { productsInCart, getValueToCartContext } = useContext(MouseContext);
 
-  const { mouseOnDescription } = useContext(MouseContext);
-
-  useEffect(() => {
-    setHandleDescrition(mouseOnDescription);
-    console.log(handleDescrition[0]?.modelFull);
-  }, [mouseOnDescription]);
+  // useEffect(() => {
+  //   console.log("Description");
+  //   getValueToCartContext();
+  // }, []);
 
   return (
     <>
       <main className="flex items-center justify-center mx-[5rem] mt-[5rem] relative ">
         <div>
           <div>
-            <h1>TECHLONG SOTRE</h1>
+            <h1>TECHLONG STORE</h1>
           </div>
 
           <div className="py-7 max-w-[60%] z-1">
@@ -47,7 +45,6 @@ const Description = () => {
         </div>
       </main>
       <ProductsPage />
-      {/* //G703 */}
     </>
   );
 };
