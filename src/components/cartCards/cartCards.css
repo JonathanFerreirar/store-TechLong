@@ -1,0 +1,6 @@
+.cartCards span {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 14px;
+  color: var(--letter-blue);
+}

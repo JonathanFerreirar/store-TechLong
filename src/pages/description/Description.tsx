@@ -1,6 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-
-import MouseContext from "../../context/mouse-context";
+import React from "react";
 
 import { ProductsPage } from "../products/Products-page";
 
@@ -9,13 +7,6 @@ import "./description.css";
 import G703 from "../../assets/mouses/up-G703.png";
 
 const Description = () => {
-  const { productsInCart, getValueToCartContext } = useContext(MouseContext);
-
-  // useEffect(() => {
-  //   console.log("Description");
-  //   getValueToCartContext();
-  // }, []);
-
   return (
     <>
       <main className="flex items-center justify-center mx-[5rem] mt-[5rem] relative ">

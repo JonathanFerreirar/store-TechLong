@@ -28,7 +28,10 @@ export const Navbar: React.FC = () => {
           Contact
         </Link>
         <li className="flex gap-2 items-center justify-center text-white text-[20px] ml-[100px] hover:text-[#3a8bb1]">
-          <BsCartFill />
+          <Link to={"/cart"}>
+            <BsCartFill />
+          </Link>
+
           <p className="text-[15px] text-[#3a8bb1]">{productsInCart.length}</p>
         </li>
       </ul>

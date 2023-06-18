@@ -1,0 +1,97 @@
+.cart-page h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 14px;
+  color: var(--letter-blue);
+}
+
+.cart-page span,
+button,
+h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 14px;
+  color: var(--letter-blue);
+}
+
+.confirm-custom-UI {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  min-height: 30%;
+  border-radius: 15px;
+
+  z-index: 99;
+  background-color: var(--shadow);
+}
+.confirm-custom-UI h1 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 36px;
+  color: var(--letter-blue);
+}
+
+.confirm-custom-UI p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--white);
+}
+.confirm-custom-UI button {
+  background-color: var(--background);
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+
+  color: var(--letter-blue);
+
+  font-weight: 600;
+  font-size: 15px;
+
+  box-shadow: rgba(10, 100, 111, 0.2) 0px 7px 2px 0px;
+}
+
+.confirm-custom-UI button:hover {
+  box-shadow: none;
+  color: #fff;
+}
+
+@media (max-width: 750px) {
+  .confirm-custom-UI {
+    width: 85%;
+  }
+  .confirm-custom-UI h1 {
+    font-size: 20px;
+  }
+  .confirm-custom-UI p {
+    font-size: 0.9rem;
+    padding: 10 0 !important;
+  }
+
+  .confirm-custom-UI button {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+.img-content {
+  width: 300px;
+}
+
+@media (max-width: 480px) {
+  .confirm-custom-UI {
+    width: 85%;
+  }
+  .confirm-custom-UI h1 {
+    font-size: 18px;
+  }
+  .confirm-custom-UI p {
+    font-size: 0.8rem;
+  }
+
+  .confirm-custom-UI button {
+    width: 90px;
+    height: 40px;
+  }
+}

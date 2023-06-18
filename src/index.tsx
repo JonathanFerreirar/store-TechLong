@@ -36,6 +36,7 @@ new Server({
             img: G502,
             imgUp: UPG502,
             price: 399.99,
+            qnt: 1,
           },
           {
             model: "G703",
@@ -44,6 +45,7 @@ new Server({
             img: G703,
             imgUp: UPG703,
             price: 299.99,
+            qnt: 1,
           },
           {
             model: "G203",
@@ -52,6 +54,7 @@ new Server({
             img: G203,
             imgUp: UPG203,
             price: 129.99,
+            qnt: 1,
           },
         ],
         cart: [schema.all("mouse")],

@@ -9,7 +9,7 @@ interface IMouseObj {
 
 const MouseContext = createContext({
   productsObj: [],
-  productsInCart: [{}],
+  productsInCart: [],
 
   getProdctsContext: () => {},
   postProdctsContext: (mouse: IMouseObj) => {},
@@ -19,7 +19,7 @@ const MouseContext = createContext({
 
 function Provider({ children }: any) {
   const [productsObj, setProductsObj] = useState([]);
-  const [productsInCart, setproductsInCart] = useState([]);
+  const [productsInCart, setproductsInCart] = useState<any>([]);
 
   const getProdctsContext = useCallback(async () => {
     try {
