@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { confirmAlert } from "react-confirm-alert";
 
 import { BsGithub } from "react-icons/bs";
@@ -35,11 +35,13 @@ const Cart = () => {
               apps I own. Now feel free to check each my applications and give
               me many suggestions.
             </p>
-              <a
+            <a
               href="https://github.com/JonathanFerreirar"
               target="_blank"
               rel="noreferrer"
-            >   <BsGithub className="text-[70px]" />
+            >
+              {" "}
+              <BsGithub className="text-[70px]" />
             </a>
 
             <button
