@@ -44,7 +44,7 @@ export const NavbarMobile = () => {
           </Link>
 
           <Link
-            to={"/"}
+            to={"/cart"}
             className="text-white text-[15px]  hover:text-[#3a8bb1]"
           >
             <BsCartFill />
