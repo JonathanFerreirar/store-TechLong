@@ -35,9 +35,11 @@ const Cart = () => {
               apps I own. Now feel free to check each my applications and give
               me many suggestions.
             </p>
-            <a href="https://github.com/JonathanFerreirar">
-              <BsGithub className="text-[70px]" />
-            </a>
+              <a
+              href="https://github.com/JonathanFerreirar"
+              target="_blank"
+              rel="noreferrer"
+            >
 
             <button
               className="my-5 "
