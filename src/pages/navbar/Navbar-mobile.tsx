@@ -14,6 +14,7 @@ export const NavbarMobile = () => {
     setHandleMenu(!handleMenu);
     handleMenu ? setMenuIsOpen("") : setMenuIsOpen("hidden");
   };
+
   return (
     <nav className="navbar-mobile relative justify-between items-center mx-[1.8rem] my-5">
       <div className="mobile">
@@ -29,26 +30,23 @@ export const NavbarMobile = () => {
           <BsXLg className="text-[#3a8bb1] text-[30px]" onClick={openMenu} />
         )}
 
-        <ul className={`flex flex-col gap-5 items-center ${menuIsOpen} `}>
-          <Link
-            to={"/contact"}
-            className="text-white text-[15px] hover:text-[#3a8bb1] z-1"
-          >
-            Contact
-          </Link>
-          <Link
-            to={"/"}
-            className="text-white text-[15px] hover:text-[#3a8bb1]"
-          >
-            Home
-          </Link>
+        <ul className={`flex flex-col gap-5 items-center z-50 ${menuIsOpen} `}>
+          <li>
+            <Link to={"/"} className="text-white  text-[15px] ">
+              Home
+            </Link>
+          </li>
 
-          <Link
-            to={"/cart"}
-            className="text-white text-[15px]  hover:text-[#3a8bb1]"
-          >
-            <BsCartFill />
-          </Link>
+          <li>
+            <Link to={"/contact"} className="text-white text-[15px]">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart" className="text-white  text-[15px]">
+              <BsCartFill />
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

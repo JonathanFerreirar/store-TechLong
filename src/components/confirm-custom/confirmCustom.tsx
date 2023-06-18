@@ -32,7 +32,9 @@ function ConfirmCustom({
         <h1>Would you like to add it to your cart ?</h1>
       </div>
 
-      <p className="text-center py-5 p-5 text-justify ">{contentAlert}</p>
+      <p className="text-center py-5 p-5 text-justify mb-[50px]">
+        {contentAlert}
+      </p>
       <div className="flex justify-center items-center">
         <img
           className="img-content"

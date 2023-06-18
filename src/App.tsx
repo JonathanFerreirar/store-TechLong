@@ -10,8 +10,9 @@ function App() {
   const { toastState } = useContext(confirmAlertContext);
   return (
     <div className="App">
-      <Navbar />
       <NavbarMobile />
+      <Navbar />
+
       <Outlet />
       {toastState && <Toast />}
     </div>

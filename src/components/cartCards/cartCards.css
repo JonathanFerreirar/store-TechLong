@@ -4,3 +4,11 @@
   line-height: 14px;
   color: var(--letter-blue);
 }
+
+@media (max-width: 750px) {
+  .cartCards span {
+    font-size: 15px;
+    line-height: 14px;
+    color: var(--letter-blue);
+  }
+}

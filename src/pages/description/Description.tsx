@@ -15,7 +15,7 @@ const Description = () => {
             <h1>TECHLONG STORE</h1>
           </div>
 
-          <div className="py-7 max-w-[60%] z-1">
+          <div className="py-7 max-w-[60%]">
             <h4>Logitech High Performance </h4>
             <h4 className="py-3">Gaming Mouse</h4>
           </div>
