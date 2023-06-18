@@ -31,6 +31,12 @@ The best solution to this problem was not to depend on the library to create my 
     For this problem the solution was more complex and brought me new knowledge, good for this solution I changed the function that manipulated the state of my modal, leaving it dynamic by passing the specific mouse model to it, so each modal represented a function with a particular model , this solution take out me a few nights sleep, but I'm glad I did!
 </p>
 
+<h2>Improvements I could have made</h2>
+
+<h3>Multiply the values ​​of the same item in the cart and delete an item from the cart</h3>
+
+<p>deciding not to do this action because working with all the mirage Js requests is very complicated, if I were to do this project again I would definitely choose to use a json-server, I loved the mirage and every project I work on only with get and post I intend to using, but if you are going to use all the CRUD I prefer to use a json-server.</p>
+
 
 <h2>Installation </h2>
 
