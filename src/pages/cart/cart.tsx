@@ -39,7 +39,8 @@ const Cart = () => {
               href="https://github.com/JonathanFerreirar"
               target="_blank"
               rel="noreferrer"
-            >
+            >   <BsGithub className="text-[70px]" />
+            </a>
 
             <button
               className="my-5 "
