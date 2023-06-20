@@ -1,6 +1,6 @@
 
 <h2>Deploy:  https://techlong.vercel.app/</h1>
-<img width="100%" alt="TechLong" src="https://github.com/JonathanFerreirar/store-TechLong/assets/107007377/35ad9c23-45ca-4ba8-962c-c9ca77e32513" />
+<img width="100%" alt="TechLong" src="https://github.com/JonathanFerreirar/store-TechLong/assets/107007377/f659648a-f7d3-4113-ac15-90bf435c0aa9" />
 
 <h2>Project Title</h2>
 
